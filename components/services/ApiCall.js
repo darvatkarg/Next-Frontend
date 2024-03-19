@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export const commonRequest = async (methods, url, body, headers) => {
   let config = {
@@ -19,7 +20,7 @@ export const commonRequest = async (methods, url, body, headers) => {
       return data;
     })
     .catch((error) => {
-      // return error;
-      console.log(error);
+      // toast.error("Something went wrong")
+      return error;
     });
 };

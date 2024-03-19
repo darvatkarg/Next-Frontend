@@ -1,6 +1,7 @@
 "use client";
 import { register } from "@/components/services/Apis";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const SignUp = () => {
   const [first_name, setFirst_Name] = useState("");
@@ -19,6 +20,12 @@ const SignUp = () => {
 
     const res = await register(newData);
     console.log(res);
+    if (res.status === 200) {
+      toast.success(`${res.data.message}`);
+    }
+    if (res.response.status === 500) {
+      toast.error("Something went wrong");
+    }
     setFirst_Name("");
     setLast_Name("");
     setEmail("");
@@ -28,8 +35,8 @@ const SignUp = () => {
   return (
     <div className="container">
       <form
-        className="row g-3 needs-validation mt-4 mb-4"
-        noValidate
+        className="row g-3 needs-validation was-validated mt-4 mb-4"
+        noValidate=""
         onSubmit={onSubmit}
       >
         <div className="col-md-6">
@@ -44,7 +51,7 @@ const SignUp = () => {
             onChange={(e) => setFirst_Name(e.target.value)}
             required
           />
-          <div className="valid-feedback">Looks good!</div>
+          <div className="invalid-feedback">Please enter your name!</div>
         </div>
         <div className="col-md-6">
           <label htmlFor="validationCustom02" className="form-label">
@@ -58,7 +65,7 @@ const SignUp = () => {
             onChange={(e) => setLast_Name(e.target.value)}
             required
           />
-          <div className="valid-feedback">Looks good!</div>
+          <div className="invalid-feedback">Please enter your last name!</div>
         </div>
         <div className="col-md-6">
           <label htmlFor="validationCustom03" className="form-label">

@@ -3,6 +3,8 @@ import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "@/components/Navbar";
 import BootstrapClient from "@/components/BootstrapClient";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
+        <ToastContainer />
         <div className="container">{children}</div>
         <BootstrapClient />
       </body>
