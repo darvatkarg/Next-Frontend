@@ -19,6 +19,10 @@ const SignUp = () => {
 
     const res = await register(newData);
     console.log(res);
+    setFirst_Name("");
+    setLast_Name("");
+    setEmail("");
+    setPassword("");
   };
 
   return (
