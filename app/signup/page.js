@@ -20,12 +20,6 @@ const SignUp = () => {
 
     const res = await register(newData);
     console.log(res);
-    if (res.status === 200) {
-      toast.success(`${res.data.message}`);
-    }
-    if (res.response.status === 500) {
-      toast.error("Something went wrong");
-    }
     setFirst_Name("");
     setLast_Name("");
     setEmail("");
@@ -84,7 +78,7 @@ const SignUp = () => {
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <div className="invalid-feedback">Please choose a username.</div>
+            <div className="invalid-feedback">Please enter your email!</div>
           </div>
         </div>
         <div className="col-md-6">
@@ -96,7 +90,7 @@ const SignUp = () => {
               #
             </span>
             <input
-              type="text"
+              type="password"
               className="form-control"
               id="validationCustom04"
               aria-describedby="inputGroupPrepend1"
@@ -104,7 +98,7 @@ const SignUp = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            <div className="invalid-feedback">Please choose a password.</div>
+            <div className="invalid-feedback">Please enter password!</div>
           </div>
         </div>
         <div className="col-12 d-flex justify-content-center align-items-center mt-3 mb-3">
