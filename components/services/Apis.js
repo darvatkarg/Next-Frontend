@@ -9,7 +9,7 @@ export const login = async (data) => {
 };
 
 export const getAllUsers = async () => {
-  return await commonRequest("GET", `/findAll`);
+  return await commonRequest("GET", `/findall`);
 };
 
 export const getUserById = async (id) => {

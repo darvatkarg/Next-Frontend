@@ -30,7 +30,7 @@ const UpdateForm = ({ params }) => {
       email: email,
     };
 
-    const res = await updateUser(newData);
+    const res = await updateUser(userID, newData);
     console.log(res);
     setFirst_Name("");
     setLast_Name("");
