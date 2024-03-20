@@ -17,11 +17,11 @@ export const commonRequest = async (methods, url, body, headers) => {
   //axios instance
   return axios(config)
     .then((res) => {
-      toast.success(res.data.message)
+      toast.success(res.data.message);
       return res;
     })
     .catch((error) => {
-      toast.error("Something went wrong")
+      toast.error("Something went wrong");
       return error;
     });
 };

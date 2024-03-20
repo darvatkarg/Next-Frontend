@@ -5,6 +5,9 @@ import Navbar from "@/components/Navbar";
 import BootstrapClient from "@/components/BootstrapClient";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
 
 const inter = Inter({ subsets: ["latin"] });
 
